@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global styles for WolfSpec */
+@layer base {
+  html {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  
+  body {
+    @apply bg-wolfspec-gray-50 text-wolfspec-gray-800;
+    line-height: 1.6;
+  }
+}
+
+/* Custom component classes */
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded font-medium transition-colors cursor-pointer;
+  }
+  
+  .btn-primary {
+    @apply bg-wolfspec-blue-500 text-white hover:bg-wolfspec-blue-600;
+  }
+  
+  .btn-secondary {
+    @apply bg-wolfspec-gray-500 text-white hover:bg-wolfspec-gray-600;
+  }
+  
+  .btn-success {
+    @apply bg-wolfspec-green-500 text-white hover:bg-wolfspec-green-600;
+  }
+  
+  .btn-disabled {
+    @apply bg-wolfspec-gray-300 text-wolfspec-gray-500 cursor-not-allowed;
+  }
+  
+  .card {
+    @apply bg-white rounded-lg shadow-sm border p-6;
+  }
+  
+  .input {
+    @apply w-full p-2 border border-wolfspec-gray-300 rounded text-sm focus:outline-none focus:ring-2 focus:ring-wolfspec-blue-400;
+  }
+}
+
+/* Drag and drop specific styles */
+@layer utilities {
+  .drag-handle {
+    cursor: grab;
+  }
+  
+  .drag-handle:active {
+    cursor: grabbing;
+  }
+  
+  .dragging {
+    @apply opacity-75 rotate-1 z-50;
+  }
+  
+  .drop-zone-active {
+    @apply scale-105 border-wolfspec-green-500 bg-wolfspec-green-50;
+  }
+}
+
+/* Responsive typography */
+@layer base {
+  h1 {
+    @apply text-2xl font-bold text-wolfspec-gray-800;
+  }
+  
+  h2 {
+    @apply text-xl font-bold text-wolfspec-gray-800;
+  }
+  
+  h3 {
+    @apply text-lg font-semibold text-wolfspec-gray-800;
+  }
+  
+  h4 {
+    @apply text-base font-semibold text-wolfspec-gray-800;
+  }
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .card {
+    @apply p-4;
+  }
+  
+  .btn {
+    @apply min-h-[44px] text-base;
+  }
+  
+  /* Larger touch targets on mobile */
+  .touch-target {
+    @apply min-h-[44px] min-w-[44px];
+  }
+}
